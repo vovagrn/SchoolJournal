@@ -10,7 +10,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Column;
 
 @Entity
-@Table(name = "stock", catalog = "mkyong", uniqueConstraints = {
+@Table(name = "stock", catalog = "school_journal_db", uniqueConstraints = {
 		@UniqueConstraint(columnNames = "STOCK_NAME"),
 		@UniqueConstraint(columnNames = "STOCK_CODE") })
 public class Stock implements java.io.Serializable {	
