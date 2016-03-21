@@ -1,6 +1,5 @@
 package com.ltl.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -12,12 +11,12 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 @Entity
 @Table(name = "photo")
-public class Photo extends BaseModel<Integer>{
+public class Photo extends BaseModel<Long>{
 	
 	@Column(name = "file_name")
     private String fileName;
 
-    @ManyToOne(cascade = { CascadeType.ALL })
+    @ManyToOne()
     @JoinColumn(name = "person_id")
     private Person person;
 

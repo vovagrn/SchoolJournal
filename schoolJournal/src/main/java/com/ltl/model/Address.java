@@ -14,7 +14,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 @Entity
 @Table(name = "address")
-public class Address extends BaseModel<Integer>{
+public class Address extends BaseModel<Long>{
 	
 	@Column(name = "city")
 	private String city;

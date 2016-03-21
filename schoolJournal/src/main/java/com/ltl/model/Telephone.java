@@ -1,6 +1,5 @@
 package com.ltl.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -11,22 +10,22 @@ import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 @Entity
-@Table(name = "phone")
-public class Phone extends BaseModel<Integer>{
+@Table(name = "telephone")
+public class Telephone extends BaseModel<Long>{
 	
-	@Column(name = "phone_number")
-	private int phoneNumber;
+	@Column(name = "telephone_number")
+	private int telephoneNumber;
 	
-	@ManyToOne(cascade = {CascadeType.ALL})
+	@ManyToOne()
 	@JoinColumn(name = "person_id")
 	private Person person;
 
 	public int getPhoneNumber() {
-		return phoneNumber;
+		return telephoneNumber;
 	}
 
 	public void setPhoneNumber(int phoneNumber) {
-		this.phoneNumber = phoneNumber;
+		this.telephoneNumber = phoneNumber;
 	}
 
 	public Person getPerson() {
@@ -39,7 +38,7 @@ public class Phone extends BaseModel<Integer>{
 
 	@Override
 	public int hashCode() {
-		return new HashCodeBuilder(19, 31).append(phoneNumber).toHashCode();
+		return new HashCodeBuilder(19, 31).append(telephoneNumber).toHashCode();
 	}
 
 	@Override
@@ -50,8 +49,8 @@ public class Phone extends BaseModel<Integer>{
 		if (other == null || getClass() != other.getClass()){
 			return false;
 		}
-		Phone phone = (Phone) other;		
-		return new EqualsBuilder().appendSuper(super.equals(other)).append(phoneNumber, phone.phoneNumber).isEquals();
+		Telephone phone = (Telephone) other;		
+		return new EqualsBuilder().appendSuper(super.equals(other)).append(telephoneNumber, phone.telephoneNumber).isEquals();
 	}	
 
 }
