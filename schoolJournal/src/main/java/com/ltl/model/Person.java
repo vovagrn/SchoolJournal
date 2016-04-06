@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @Table(name = "person")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "person_gender", discriminatorType = DiscriminatorType.STRING, length = 1)
-public class Person extends BaseModel<Long> implements Serializable{
+public abstract class Person extends BaseModel<Long> implements Serializable{
 	
 	private static final long serialVersionUID = -8775797199823495932L;
 
